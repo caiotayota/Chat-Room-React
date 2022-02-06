@@ -23,7 +23,7 @@ export default function Custom404() {
                 styleSheet={{
                     display: 'flex', alignItems: 'center', justifyContent: 'center',
                     backgroundColor: appConfig.theme.colors.primary[400],
-                    backgroundImage: 'url(https://virtualbackgrounds.site/wp-content/uploads/2020/09/limmys-gamer-room-1536x864.jpg)',
+                    backgroundImage: 'url(https://images.pexels.com/photos/1164675/pexels-photo-1164675.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260)',
                     backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundBlendMode: 'multiply',
                 }}
             >
@@ -40,6 +40,7 @@ export default function Custom404() {
                         borderRadius: '50px', padding: '32px', margin: '16px',
                         boxShadow: '0 2px 10px 0 rgb(0 0 0 / 20%)',
                         backgroundColor: appConfig.theme.colors.neutrals[900],
+                        opacity: '80%'
                         
                     }}
                 >

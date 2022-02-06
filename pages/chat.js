@@ -74,10 +74,10 @@ export default function ChatPage() {
         <Box
             styleSheet={{
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
-                backgroundColor: appConfig.theme.colors.primary[500],
-                backgroundImage: `url(https://virtualbackgrounds.site/wp-content/uploads/2020/08/camping-near-mount-gongga-1536x864.jpg)`,
-                backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundBlendMode: 'multiply',
-                color: appConfig.theme.colors.neutrals['000']
+                    backgroundColor: appConfig.theme.colors.primary[400],
+                    backgroundImage: 'url(https://images.pexels.com/photos/1164675/pexels-photo-1164675.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260)',
+                    backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundBlendMode: 'multiply',
+                    
             }}
         >
             <Box
@@ -92,6 +92,7 @@ export default function ChatPage() {
                     maxWidth: '95%',
                     maxHeight: '95vh',
                     padding: '32px',
+                    opacity: '90%'
                 }}
             >
                 <Header />
@@ -101,10 +102,11 @@ export default function ChatPage() {
                         display: 'flex',
                         flex: 1,
                         height: '80%',
-                        backgroundColor: appConfig.theme.colors.neutrals[600],
+                        backgroundColor: appConfig.theme.colors.neutrals[900],
                         flexDirection: 'column',
                         borderRadius: '5px',
                         padding: '16px',
+                        
                     }}
                 >
                     <MessageList messages={messagesList} />
@@ -150,7 +152,7 @@ export default function ChatPage() {
                                 resize: 'none',
                                 borderRadius: '5px',
                                 padding: '6px 8px',
-                                backgroundColor: appConfig.theme.colors.neutrals[800],
+                                backgroundColor: appConfig.theme.colors.neutrals[500],
                                 marginRight: '5px',
                                 color: appConfig.theme.colors.neutrals[200],
                             }}
@@ -186,8 +188,8 @@ function Header() {
     return (
         <>
             <Box styleSheet={{ width: '100%', marginBottom: '16px', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }} >
-                <Text variant='heading5'>
-                    Chat
+                <Text variant='heading5' styleSheet={{color: 'lightgrey'}}>
+                    Chat Room
                 </Text>
                 <Button
                     variant='tertiary'
