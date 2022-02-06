@@ -1,0 +1,56 @@
+{
+    "name": "Chat online using your GitHub ID",
+    "theme": {
+        "colors": {
+            "primary": {
+                "050": "#e3e4f9",
+                "100": "#c4c1ea",
+                "200": "#a3a6d9",
+                "300": "#7b80c4",
+                "400": "#5760ae",
+                "500": "#3f4091",
+                "600": "#2f3481",
+                "700": "#202972",
+                "800": "#0e1658",
+                "900": "#070540"
+            },
+            "neutrals": {
+                "000": "#FFFFFF",
+                "050": "#F5F7FA",
+                "100": "#E4E7EB",
+                "200": "#CBD2D9",
+                "300": "#9AA5B1",
+                "400": "#52667A",
+                "500": "#313D49",
+                "600": "#29333D",
+                "700": "#212931",
+                "800": "#181F25",
+                "900": "#101418",
+                "999": "#080A0C"
+            }
+        }
+    },
+    "stickers": [
+        "https://c.tenor.com/lNtmoshuUI8AAAAj/bahroo-hacker.gif",
+        "https://c.tenor.com/whgQwNlVvNkAAAAj/xero-code.gif",
+        "https://c.tenor.com/aLByPR5yCwIAAAAj/nerdy-alien.gif",
+        "https://c.tenor.com/xR9KqQXbHaAAAAAj/nerdy-pile-of-poo.gif",
+        "https://c.tenor.com/fHVyqoYSQf4AAAAj/hehehe-monkey.gif",
+        "https://c.tenor.com/98jhLBAhPEAAAAAj/could-you-not-kid.gif",
+        "https://c.tenor.com/Klii1KEkxMUAAAAj/hahahaha-you-suck-happy.gif",
+        "https://c.tenor.com/N2_bZu36EQ8AAAAj/troll-face-swag.gif",
+        "https://c.tenor.com/26-Co8xnavAAAAAj/duh-dog.gif",
+        "https://c.tenor.com/4weamaPRYKYAAAAj/smiling-scared.gif",
+        "https://c.tenor.com/rXJHFQTPbbwAAAAj/parrot-party-parrot.gif",
+        "https://c.tenor.com/q1Ximwl6m88AAAAM/hieuuu2-hieuuu3.gif",
+        "https://c.tenor.com/ZHYOA3GhrDoAAAAj/caras-de-mongolos.gif",
+        "https://c.tenor.com/6OlILC4Gj2YAAAAj/look-at-dis-dude-yao-ming.gif",
+        "https://c.tenor.com/RXPvU5v7nioAAAAj/mona-lisa-salty.gif",
+        "https://c.tenor.com/fMUOPRVdSzUAAAAd/python.gif",
+        "https://c.tenor.com/PZSmpxGQHfoAAAAM/supportlauncher-bird.gif",
+        "https://c.tenor.com/InTo_0BYyVEAAAAM/coffee-caffeine.gif",
+        "https://c.tenor.com/YipNAlIqR14AAAAj/kiss-me-im-irish-spring-fling.gif",
+        "https://c.tenor.com/UVfoG58zzlQAAAAj/covid-survivor-covid19.gif"
+    ]
+    
+}
