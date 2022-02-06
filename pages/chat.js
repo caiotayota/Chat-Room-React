@@ -29,11 +29,11 @@ export default function ChatPage() {
         supabaseClient
             .from('messages')
             .select('*')
-            .order('id', {ascending: false})
+            .order('id', { ascending: false })
             .then(({ data }) => {
                 // console.log('Fetched data', data)
-               setMessagesList(data)
-        });
+                setMessagesList(data)
+            });
 
         const subscription = listenMessagesInRealtime((newMessage) => {
             setMessagesList((listCurrentValue) => {
@@ -63,10 +63,10 @@ export default function ChatPage() {
         supabaseClient
             .from('messages')
             .insert([message]) // Must be an object with the same fields that have been wrote on supabase
-            .then(({data}) => {
+            .then(({ data }) => {
                 console.log('Creating message: ', data)
             });
-            
+
         setMessage('');
     }
 
@@ -108,13 +108,7 @@ export default function ChatPage() {
                     }}
                 >
                     <MessageList messages={messagesList} />
-                    <ButtonSendSticker
-                        onStickerClick = {(sticker) => {
-                            console.log("save on database");
-                            handleNewMessage(`:sticker: ${sticker}`)
 
-                        }}
-                    />
                     <Box
                         as="form"
 
@@ -127,8 +121,15 @@ export default function ChatPage() {
                             display: 'flex',
                             alignItems: 'center',
                         }}
-                    > 
-                        
+                    >
+                        <ButtonSendSticker
+                            onStickerClick={(sticker) => {
+                                console.log("save on database");
+                                handleNewMessage(`:sticker: ${sticker}`)
+
+                            }}
+
+                        />
                         <TextField
                             value={message}
                             onChange={(event) => {
@@ -153,11 +154,13 @@ export default function ChatPage() {
                                 marginRight: '5px',
                                 color: appConfig.theme.colors.neutrals[200],
                             }}
-                            
+
                         />
-                        
+
                         <Button
+                            disabled={!message}
                             type='submit'
+                            iconName="paperPlane"
                             label='Send'
                             buttonColors={{
                                 contrastColor: appConfig.theme.colors.neutrals["000"],
@@ -167,7 +170,8 @@ export default function ChatPage() {
                             }}
                             styleSheet={{
                                 height: '40px',
-                                marginBottom: '8px'
+                                marginBottom: '8px',
+                                minWidth: '100px'
 
                             }}
                         />
@@ -216,6 +220,8 @@ function MessageList(props) {
                         key={message.id}
                         tag="li"
                         styleSheet={{
+                            display: 'flex', flexDirection: 'column',
+                            alignItems: message.from == props.username ? 'flex-end' : 'flex-start',
                             borderRadius: '5px',
                             padding: '6px',
                             marginBottom: '12px',
@@ -227,12 +233,15 @@ function MessageList(props) {
                         <Box
                             styleSheet={{
                                 marginBottom: '8px',
+                                display: 'flex',
+                                alignItems: 'center',
+                                maxWidth: '80vw'
                             }}
                         >
                             <Image
                                 styleSheet={{
-                                    width: '20px',
-                                    height: '20px',
+                                    width: '35px',
+                                    height: '35px',
                                     borderRadius: '50%',
                                     display: 'inline-block',
                                     marginRight: '8px',
@@ -240,7 +249,20 @@ function MessageList(props) {
                                 src={`https://github.com/${message.from}.png`}
                             />
                             <Text tag="strong">
-                                {message.from}
+                                <Text
+                                    tag="a"
+                                    href={`https://github.com/${message.from}`}
+                                    target='_blank'
+                                    styleSheet={{
+                                        color: appConfig.theme.colors.neutrals[200],
+                                        textDecoration: 'none',
+                                        hover: {
+                                            color: appConfig.theme.colors.primary[500],
+                                        }
+                                    }}
+                                >
+                                    {message.from}
+                                </Text>
                             </Text>
                             <Text
                                 styleSheet={{
@@ -250,12 +272,12 @@ function MessageList(props) {
                                 }}
                                 tag="span"
                             >
-                                {(new Date().toLocaleDateString())}
+                                {new Date(message.created_at).toLocaleString('pt-BR', {dateStyle: 'short',timeStyle: 'short'})}
                             </Text>
                         </Box>
                         {message.text.startsWith(':sticker:')
-                            ? ( <Image src={message.text.replace(':sticker:', '')}/> )
-                            : (message.text)                        
+                            ? (<Image styleSheet={{ maxWidth: '4.5rem' }} src={message.text.replace(':sticker:', '')} />)
+                            : (message.text)
                         }
 
                         {/* {message.text} */}

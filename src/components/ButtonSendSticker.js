@@ -13,6 +13,12 @@ export function ButtonSendSticker(props) {
             }}
         >
             <Button
+            buttonColors={{
+                contrastColor: appConfig.theme.colors.neutrals["000"],
+                mainColor: appConfig.theme.colors.primary[500],
+                mainColorLight: appConfig.theme.colors.primary[400],
+                mainColorStrong: appConfig.theme.colors.primary[300],
+              }}
                 styleSheet={{
                     borderRadius: '8%',
                     padding: '0 3px 0 0',
@@ -30,8 +36,10 @@ export function ButtonSendSticker(props) {
                         filter: 'grayscale(0)',
                     }
                 }}
-                label="👅"
+                label=""
+                iconName='stickyNote'
                 onClick={() => setOpenState(!isOpen)}
+                
                 
             />
             {isOpen && (

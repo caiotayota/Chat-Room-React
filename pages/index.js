@@ -21,7 +21,7 @@ function Title(props) {
 }
 
 export default function HomePage() {
-    const [username, setUsername] = React.useState('caiotayota');
+    const [username, setUsername] = React.useState('');
     const routing = useRouter();
 
     return (
@@ -63,11 +63,11 @@ export default function HomePage() {
                             width: { xs: '100%', sm: '50%' }, textAlign: 'center', marginBottom: '32px',
                         }}
                     >
-                        <Title tag="h2">Welcome back!</Title>
-                        <Text variant='body2' styleSheet={{ marginBottom: '12px', marginTop: "8px", color: appConfig.theme.colors.neutrals[200] }}> Talk, chat, hang out, and stay close with your friends and communities.</Text>
-                        <Text variant="body3" styleSheet={{ marginBottom: '32px', color: appConfig.theme.colors.neutrals[400] }}>
+                        <Title tag="h2">Hi there, welcome back!</Title>
+                        <Text variant='body2' styleSheet={{ marginBottom: '24px', marginTop: "12px", color: appConfig.theme.colors.neutrals[400] }}> Talk, chat, hang out, and stay close with your friends and communities.</Text>
+                        {/* <Text variant="body3" styleSheet={{ marginBottom: '32px', color: appConfig.theme.colors.neutrals[400] }}>
                             {appConfig.name}
-                        </Text>
+                        </Text> */}
 
                         <TextField
                             value={username}
@@ -87,10 +87,11 @@ export default function HomePage() {
                             }}
                         />
                         <Button
-                            type='submit'
-                            label='Enter'
+                            disabled = {username.length < 2}
+                            type = 'submit'
+                            label = 'Enter'
                             fullWidth
-                            buttonColors={{
+                            buttonColors = {{
                                 contrastColor: appConfig.theme.colors.neutrals["000"],
                                 mainColor: appConfig.theme.colors.primary[500],
                                 mainColorLight: appConfig.theme.colors.primary[400],
@@ -122,7 +123,7 @@ export default function HomePage() {
                                 borderRadius: '50%',
                                 marginBottom: '16px',
                             }}
-                            src={`https://github.com/${username}.png`}
+                            src={username ? `https://github.com/${username}.png` : 'https://i.postimg.cc/LXRHXgX0/github.png'}
                         />
                         <Text
                             variant="body4"

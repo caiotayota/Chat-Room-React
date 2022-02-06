@@ -47,8 +47,9 @@ export default function Custom404() {
                         styleSheet={{
                             height: "60%",
                         }}
-                        src="https://media.discordapp.net/attachments/818979655046266882/936003619684249640/ezgif.com-gif-maker.gif"
+                        src="https://i.postimg.cc/TwmD8Ds7/error404.gif"
                     ></Image>
+                    
                     <Text
                         variant="heading2"
                         styleSheet={{
