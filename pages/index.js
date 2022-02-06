@@ -71,6 +71,7 @@ export default function HomePage() {
 
                         <TextField
                             value={username}
+                            placeholder='Type your GitHub username'
                             onChange={function (event) {
                                 const value = event.target.value;
                                 setUsername(value);
